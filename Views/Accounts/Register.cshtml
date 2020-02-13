@@ -1,0 +1,13 @@
+@model CRUD_MVC.Models.Account;
+
+<h2>Customer Registration</h2>
+
+<form class="form-horizontal" asp-asp-controller="Accounts" asp-action="Save" method="POST">
+    <input type="number" class="form-control" asp-for="Number" placeholder="account number" required>
+    <input type="text" class="form-control" asp-for="Holder" placeholder="holder name" required>
+    <input type="number" class="form-control" asp-for="Balance" placeholder="balance" required>
+    <input type="text" class="form-control" asp-for="Email" placeholder="email address" required>
+    <input type="text" class="form-control" asp-for="Address" placeholder="local address" required>
+
+    <button class="btn btn-outline-primary waves-effect">register</button>
+</form>
