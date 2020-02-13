@@ -1,0 +1,29 @@
+@model IEnumerable<CRUD_MVC.Models.Account>
+
+<h2>Holders account</h2>
+<div align="left" class="listcustom">
+<table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td><strong>Number: </strong></td>
+                        <td><strong>holder: </strong></td>
+                        <td><strong>Balance: </strong></td>
+                        <td><strong>Email: </strong></td>
+                        <td><strong>Address:</strong></td>
+                    </tr>
+                </thead>
+    @foreach (var account in Model)
+    {
+                <tbody>
+                    <tr> 
+                        <td> @account.Number</td>
+                        <td> @account.Holder</td>
+                        <td> @account.Balance</td>
+                        <td> @account.Email</td>
+                        <td> @account.Address</td>
+                    </tr>
+                </tbody>
+            
+    }
+    </table>
+</div>

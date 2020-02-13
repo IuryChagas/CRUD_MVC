@@ -37,6 +37,9 @@ html {
 .container {
   text-align: center;
 }
+.listcustom p {
+  margin-bottom: 0rem;
+}
 .pb-3, .py-3 {
   padding: 2rem;
 }
@@ -52,6 +55,9 @@ html {
 }
 .btn {
   margin-top: 1rem;
+}
+.btn-outline-primary {
+  width: 14rem;
 }
 .border-top {
   border-top: 1px solid #e5e5e5;
