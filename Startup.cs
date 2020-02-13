@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using CRUD_MVC.Database;
 
 namespace CRUD_MVC
 {
@@ -22,6 +24,7 @@ namespace CRUD_MVC
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDBContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
         }
 
