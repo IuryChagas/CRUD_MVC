@@ -6,21 +6,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CRUD_MVC.Models;
+using CRUD_MVC.Database;
 
 namespace CRUD_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
+        private readonly ApplicationDBContext database;
+        public HomeController(ApplicationDBContext database){
+            this.database = database;
         }
-
         public IActionResult Index()
         {
-            return View();
+            var accounts = database.Accounts.ToList();
+            return View(accounts);
         }
 
         public IActionResult Privacy()

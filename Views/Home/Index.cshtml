@@ -1,8 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<CRUD_MVC.Models.Account>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h2>Holders account</h2>
+<div class="listcustom">
+<table class="table table-dark table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <td><strong>Account: </strong></td>
+                        <td><strong>holder: </strong></td>
+                        <td><strong>Balance: </strong></td>
+                        <td><strong>Email: </strong></td>
+                        <td><strong>Address:</strong></td>
+                        <td colspan="2"><strong>Actions:</strong></td>
+                    </tr>
+                </thead>
+    @foreach (var account in Model)
+    {
+                <tbody>
+                    <tr>
+                        <td> @account.Number</td>
+                        <td> @account.Holder</td>
+                        <td> @account.Balance</td>
+                        <td> @account.Email</td>
+                        <td> @account.Address</td>
+                        <td><a href="/Accounts/Edit/@account.Id" class="edit-account">Edit</a></td>
+                        <td><a href="/Accounts/Delete/@account.Id" class="del-account">Delete</a></td>
+                    </tr>
+                </tbody>
+    }
+    </table>
+    <a asp-controller="Accounts"  asp-action="Register" class="btn btn-outline-primary waves-effect">Create new account</a>
 </div>

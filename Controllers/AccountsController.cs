@@ -29,11 +29,11 @@ namespace CRUD_MVC.Controllers
             database.Accounts.Remove(account);
             database.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
-        public IActionResult Save(Account account){
+        public IActionResult Register(Account account){
             if (account.Id == 0)
             {
                 database.Accounts.Add(account);
@@ -47,7 +47,7 @@ namespace CRUD_MVC.Controllers
                 holderAtBank.Address = account.Address ;
             }
             database.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
