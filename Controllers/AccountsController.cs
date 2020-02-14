@@ -19,12 +19,27 @@ namespace CRUD_MVC.Controllers
         public IActionResult Register(){
             return View();
         }
-        
+
+        public IActionResult Edit(int id){
+            Account account = database.Accounts.First(register => register.Id == id);
+            return View("register", account);
+        }
+
         [HttpPost]
         public IActionResult Save(Account account){
-            database.Accounts.Add(account);
-            database.SaveChanges();
+            if (account.Id == 0)
+            {
+                database.Accounts.Add(account);
+            }else{
+                Account holderAtBank = database.Accounts.First(register => register.Id == account.Id);
 
+                holderAtBank.Number = account.Number;
+                holderAtBank.Holder = account.Holder ;
+                holderAtBank.Balance = account.Balance ;
+                holderAtBank.Email = account.Email ;
+                holderAtBank.Address = account.Address ;
+            }
+            database.SaveChanges();
             return RedirectToAction("Index");
         }
     }
