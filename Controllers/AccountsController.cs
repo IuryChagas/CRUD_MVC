@@ -25,7 +25,7 @@ namespace CRUD_MVC.Controllers
             database.Accounts.Add(account);
             database.SaveChanges();
 
-            return Content("Account Number: "+ account.Number +"\nHolder: "+ account.Holder +"\nBalance: "+ account.Balance +"\nEmail: "+ account.Email +"\nAddress: "+ account.Address);
+            return RedirectToAction("Index");
         }
     }
 }

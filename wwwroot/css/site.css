@@ -56,8 +56,18 @@ html {
 .btn {
   margin-top: 1rem;
 }
+.btn:hover {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+}
 .btn-outline-primary {
   width: 14rem;
+}
+.edit-account {
+  color: #ffc107;
+}
+.edit-account:hover {
+  color: #ffc107;
+  text-decoration: underline;
 }
 .border-top {
   border-top: 1px solid #e5e5e5;
@@ -65,7 +75,9 @@ html {
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
-
+.table-bordered td {
+  border-width: .175rem;
+}
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
