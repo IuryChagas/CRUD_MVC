@@ -10,7 +10,7 @@
                         <td><strong>Balance: </strong></td>
                         <td><strong>Email: </strong></td>
                         <td><strong>Address:</strong></td>
-                        <td><strong>Actions:</strong></td>
+                        <td colspan="2"><strong>Actions:</strong></td>
                     </tr>
                 </thead>
     @foreach (var account in Model)
@@ -23,6 +23,7 @@
                         <td> @account.Email</td>
                         <td> @account.Address</td>
                         <td><a href="/Accounts/Edit/@account.Id" class="edit-account">Edit</a></td>
+                        <td><a href="/Accounts/Delete/@account.Id" class="del-account">Delete</a></td>
                     </tr>
                 </tbody>
             

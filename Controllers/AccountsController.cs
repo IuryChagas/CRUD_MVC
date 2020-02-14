@@ -24,6 +24,13 @@ namespace CRUD_MVC.Controllers
             Account account = database.Accounts.First(register => register.Id == id);
             return View("register", account);
         }
+        public IActionResult Delete(int id){
+            Account account = database.Accounts.First(register => register.Id == id);
+            database.Accounts.Remove(account);
+            database.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public IActionResult Save(Account account){

@@ -63,10 +63,17 @@ html {
   width: 14rem;
 }
 .edit-account {
-  color: #ffc107;
+  color: #f7d777;
 }
 .edit-account:hover {
   color: #ffc107;
+  text-decoration: underline;
+}
+.del-account {
+  color: #dc3545;
+}
+.del-account:hover {
+  color: #ff0202;
   text-decoration: underline;
 }
 .border-top {
